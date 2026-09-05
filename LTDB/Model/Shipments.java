@@ -12,7 +12,7 @@ public class Shipments {
     public Shipments() {
     }
 
-    public Shipments(String carrier, String shipment_info, int shipment_id) {
+    public Shipments( int shipment_id , String shipment_info, String carrier) {
         this.carrier = carrier;
         this.shipment_info = shipment_info;
         this.shipment_id = shipment_id;

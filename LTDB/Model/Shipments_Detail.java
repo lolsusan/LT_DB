@@ -12,6 +12,12 @@ public class Shipments_Detail {
     public Shipments_Detail() {
     }
 
+    public Shipments_Detail(int shipments_detail_id, int product_id, int shipment_id) {
+        this.shipments_detail_id = shipments_detail_id;
+        this.product_id = product_id;
+        this.shipment_id = shipment_id;
+    }
+
     public int getShipments_detail_id() {
         return shipments_detail_id;
     }
