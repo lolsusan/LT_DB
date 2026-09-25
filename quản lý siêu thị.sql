@@ -121,3 +121,14 @@ VALUES
 select * from bill_detail;
 
 
+SELECT 
+    b.bill_id,
+    b.customer_id,
+    b.date,
+    c.customer_name
+FROM bill b
+JOIN customer c 
+    ON b.customer_id = c.customer_id
+ORDER BY b.bill_id;
+
+

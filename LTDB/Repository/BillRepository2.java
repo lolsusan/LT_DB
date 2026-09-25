@@ -1,7 +1,7 @@
 package LTDB.Repository;
 
 import LTDB.Database.DatabaseConnection;
-import LTDB.DTO.BillDTO;
+import LTDB.DTO.BillDetail;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class BillRepository2 {
 
-    public ArrayList<BillDTO> getAllBills() {
+    public ArrayList<BillDetail> getAllBills() {
 
-        ArrayList<BillDTO> Bills = new ArrayList<>();
+        ArrayList<BillDetail> Bills = new ArrayList<>();
 
         String sql = "select\n" +
                 "\t b.bill_id,\n" +
@@ -42,14 +42,14 @@ public class BillRepository2 {
 
             while (resultSet.next()) {
 
-                BillDTO Bill = new BillDTO();
+                BillDetail Bill = new BillDetail();
 
                 Bill.setBillId(
                         resultSet.getInt("bill_id")
                 );
 
                 Bill.setCustomerName(
-                        resultSet.getNString("customer_name")
+                        resultSet.getString("customer_name")
                 );
 
                 Bill.setDate(

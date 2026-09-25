@@ -1,6 +1,6 @@
 package LTDB.View;
 
-import LTDB.DTO.BillDTO;
+import LTDB.DTO.BillDetail;
 import LTDB.Repository.BillRepository2;
 
 import java.util.ArrayList;
@@ -10,11 +10,11 @@ public class BillCaculator {
 
         BillRepository2 repository = new BillRepository2();
 
-        ArrayList<BillDTO> Bills = repository.getAllBills();
+        ArrayList<BillDetail> Bills = repository.getAllBills();
 
         System.out.println("========== Bill LIST ==========");
 
-        for (BillDTO Bill : Bills) {
+        for (BillDetail Bill : Bills) {
 
             System.out.println(
                     "ID: " + Bill.getBillId()
@@ -45,9 +45,8 @@ public class BillCaculator {
             );
 
             System.out.println(
-                    "Total Price " + (Bill.getProductSellingPrice() * Bill.getQuantity() - Bill.getDiscount() * Bill.getProductSellingPrice() * Bill.getQuantity() )
+                    "Total Price " + (Bill.getProductSellingPrice() * Bill.getQuantity() * ( 1 - Bill.getDiscount()) )
             );
-
 
             System.out.println("----------------------------------");
         }

@@ -179,4 +179,5 @@ select
     on b.bill_id = bd.bill_id
     join product p
     on bd.product_id = p.product_id
+
 ORDER BY b.bill_id;
